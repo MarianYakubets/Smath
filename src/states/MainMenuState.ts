@@ -8,15 +8,28 @@ module  mifik.smath {
             super();
         }
 
-        private background:Phaser.Sprite;
-
         preload() {
 
         }
 
         create() {
-            this.background = this.add.sprite(0, 0, "background");
-            this.background.scale.setTo(this.game.width / this.background.width, this.game.height / this.background.height);
+            this.game.stage.setBackgroundColor(0xfbf6d5);
+
+            var text = this.add.text(this.game.world.centerX, 250, '  dynamic shadows  ');
+            text.anchor.set(0.5);
+            text.align = 'center';
+
+            text.font = 'Arial Black';
+            text.fontSize = 40;
+            text.fontWeight = 'bold';
+            text.fill = '#ec008c';
+            this.input.onTap.addOnce(this.titleClicked, text);
+
+
+        }
+
+        titleClicked(){
+            alert(this);
         }
     }
 
