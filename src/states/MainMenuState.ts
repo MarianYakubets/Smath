@@ -15,7 +15,7 @@ module  mifik.smath {
         create() {
             this.game.stage.setBackgroundColor(0xfbf6d5);
 
-            var text = this.add.text(this.game.world.centerX, 250, '  dynamic shadows  ');
+            var text = this.add.text(this.game.world.centerX, 250, 'Start');
             text.anchor.set(0.5);
             text.align = 'center';
 
@@ -29,7 +29,7 @@ module  mifik.smath {
         }
 
         titleClicked(){
-            alert(this);
+            this.game.state.start("GameState");
         }
     }
 
